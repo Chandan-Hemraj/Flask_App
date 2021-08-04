@@ -1,0 +1,56 @@
+
+{% extends 'reg_base.html' %}
+
+{% block content %}
+<h2 class="mt-3 text-center">Sign Up for Free</h2>
+<form class="mt-4" method=POST action="{{ url_for('register') }}">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="form-group">
+                <input class="form-control" type="text" name="username" maxlength="150" autocapitalize="none" autocomplete="off" autofocus="" required
+                placeholder="Username" size="25">
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="form-group">
+                <input class="form-control" type="email" name="email" autocapitalize="none" autocomplete="off" autofocus="" required
+                placeholder="Email" size="25">
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="form-group">
+                <input class="form-control" type="text" name="license_key" autocapitalize="none" autocomplete="off" autofocus="" required
+                placeholder="License Key" size="25">
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="form-group">
+                <input class="form-control" type="text" name="address" autocapitalize="none" autocomplete="off" autofocus=""
+                placeholder="Address" size="25">
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="form-group">
+                <input class="form-control" type="password" name="password1" placeholder="Password" size="25" oninput="document.getElementById('confirm').pattern = this.value.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&')" required>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="form-group">
+                <input class="form-control" type="password" id="confirm" name="password2" placeholder="Confirm Password" size="25" pattern="" title="Please enter the same Password as above" required>
+            </div>
+        </div>
+
+        <div class="col-lg-12 text-center">
+            <button type="submit" class="btn btn-block btn-dark">Sign Up</button>
+        </div>
+        <div class="col-lg-12 text-center mt-5">
+            Already have an account? <a href='/login' class="text-danger">Sign In</a>
+        </div>
+    </div>
+</form>
+{% endblock %}

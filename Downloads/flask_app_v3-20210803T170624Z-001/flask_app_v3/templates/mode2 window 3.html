@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+    {% block tophead %}
+       <div class="card-header bg-success" style="margin-left:2em;">
+                                <h3 class="mb-0 text-white" style="margin-right:45em;">Mode 2: Disease Data</h3>
+
+       </div>
+    {% endblock %}
+
+    {% block welcome %}
+    {% endblock %}
+
+    {% block content %}
+
+        <div style="margin-bottom : 50px;"></div>
+        <iframe src="{{ url_for('disease_data')}}" style="position: fixed; border: none; height: 100vh; width: 100vh; overflow: visible" ></iframe>
+    {% endblock %}

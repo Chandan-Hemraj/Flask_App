@@ -1,0 +1,43 @@
+<html>
+<style>
+        div{
+        text-indent: 0px
+        }
+        div.small {
+        line-height: 1.5;
+        }
+
+        div.big {
+        line-height: 3;
+        }
+</style>
+
+<body>
+        <script>
+
+        document.getElementById('mode2f').innerHTML = "Frame:{{result.framecount}}";
+        document.getElementById('mode2l').innerHTML = "Leaf disease detection";
+        document.getElementById('mode2tl').innerHTML = "Number of total leaves detected: {{result.total_leaf}}";
+        document.getElementById('mode2th').innerHTML = "Number of helthy leaves : {{result.total_healthy}}";
+        document.getElementById('mode2rust').innerHTML = "Number of rust leaves : {{result.rust_count}}";
+        document.getElementById('mode2scub').innerHTML = "Number of scub leaves : {{result.scub_count}}";
+        document.getElementById('mode2a').innerHTML = "Apple Disease classification Results:";
+        document.getElementById('mode2b').innerHTML = "Number of botch  apples in given frame : {{result.blotch}}";
+        document.getElementById('mode2r').innerHTML = "Number of rotten apples in given frame : {{result.rotten}}";
+        document.getElementById('mode2s').innerHTML = "Number of scab apples in given frame : {{result.scab}}";
+        </script>
+        <h4 id="mode2f" class = "big" style="font-family:verdana;text-decoration: underline;margin-left : 20px;margin-bottom : 50px;"></h4>
+        <h1 id="mode2l" class ="small" style="font-family:courier;text-decoration: underline;margin-left : 50px;font-size: 25px"></h1>
+        <p id="mode2tl" class ="small" style="font-family:courier;margin-left : 50px;font-size: 20px"></p>
+        <p id="mode2th" class ="small" style="font-family:courier;margin-left : 50px;margin-bottom : 50px;font-size: 20px"></p>
+        <p id="mode2rust" class ="small" style="font-family:courier;margin-left : 50px;font-size: 20px"></p>
+        <p id="mode2scub" class ="small" style="font-family:courier;margin-left : 50px;margin-bottom : 50px;font-size: 20px"></p>
+        <h1 id="mode2a" class ="small" style="font-family:courier;text-decoration: underline;margin-left : 50px;font-size: 25px"></h1>
+        <p id="mode2b" class ="small" style="font-family:courier;margin-left : 50px;font-size: 20px"></p>
+        <p id="mode2r" class ="small" style="font-family:courier;margin-left : 50px;font-size: 20px"></p>
+        <p id="mode2s" class ="small" style="font-family:courier;margin-left : 50px;font-size: 20px"></p>
+
+
+
+</body>
+</html>

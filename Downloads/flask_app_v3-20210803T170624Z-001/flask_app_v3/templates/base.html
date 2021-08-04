@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <!-- Favicon icon -->
+    <link href="{{ url_for('static',filename='src/assets/images/artenal.jpg') }}" rel="icon" sizes="16x16" type="image/png">
+    <title>ARTENAL</title>
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static',filename='src/assets/extra-libs/c3/c3.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='src/assets/libs/chartist/dist/chartist.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='src/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet"/>
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static',filename='src/dist/css/style.min.css') }}" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<!-- thin line Class -->
+
+<body>
+<!-- ============================================================== -->
+<!-- Preloader - style you can find in spinners.css -->
+<!-- ============================================================== -->
+<div class="preloader">
+    <div class="lds-ripple">
+        <div class="lds-pos"></div>
+        <div class="lds-pos"></div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div data-boxed-layout="full" data-header-position="fixed" data-layout="vertical" data-navbarbg="skin6"
+     data-sidebar-position="fixed"
+     data-sidebartype="full" data-theme="light" id="main-wrapper">
+    <!-- ============================================================== -->
+    <!-- Topbar header - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+
+        <header class="topbar" data-navbarbg="skin6">
+            <nav class="navbar top-navbar navbar-expand-md">
+                <div class="navbar-header" data-logobg="skin6">
+                    <!-- This is for the sidebar toggle which is visible on mobile only -->
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
+                            class="ti-menu ti-close"></i></a>
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <div class="navbar-brand">
+                        <!-- Logo icon -->
+                        <a href="index.html">
+                            <b class="logo-icon">
+                                <!-- Dark Logo icon -->
+                                <img alt="homepage" class="dark-logo" src="{{ url_for('static',filename='src/assets/images/logo-icon.png') }}"/>
+                                <!-- Light Logo icon -->
+                                <img alt="homepage" class="light-logo" src="{{ url_for('static',filename='src/assets/images/logo-icon.png') }}"/>
+                            </b>
+                            <!--End Logo icon -->
+                            <!-- Logo text -->
+
+                            <span class="logo-text">
+                                    <!-- dark Logo text -->
+                                    <img alt="homepage" class="dark-logo" src="{{ url_for('static',filename='src/assets/images/artenal_logo.jpg') }}"/>
+                                <!-- Light Logo text -->
+                                    <img alt="homepage" class="light-logo" src="{{ url_for('static',filename='src/assets/images/logo-light-text.png') }}"/>
+                                </span>
+
+                        </a>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Toggle which is visible on mobile only -->
+                    <!-- ============================================================== -->
+                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)"
+                        data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i
+                            class="ti-more"></i></a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    {% block tophead %}
+
+                    {% endblock %}
+
+                </div>
+            </nav>
+        </header>
+
+    <!-- ============================================================== -->
+    <!-- End Topbar header -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    {% block sidebar %}
+    <aside class="left-sidebar" data-sidebarbg="skin6">
+        <!-- Sidebar scroll-->
+        <div class="scroll-sidebar" data-sidebarbg="skin6">
+            <!-- Sidebar navigation-->
+            <nav class="sidebar-nav">
+                <ul id="sidebarnav">
+                    <li class="sidebar-item"><a aria-expanded="false" class="sidebar-link sidebar-link"
+                                                href="{{ url_for('home') }}"><i class="feather-icon"
+                                                                     data-feather="home"></i><span
+                            class="hide-menu">Dashboard</span></a></li>
+                    <li class="list-divider"></li>
+
+                    <li class="list-divider"></li>
+                    <li class="nav-small-cap"><span class="hide-menu">Modes</span></li>
+                    <li class="sidebar-item"><a aria-expanded="false" class="sidebar-link has-arrow"
+                                                href="javascript:void(0)"><i class="feather-icon"
+                                                                             data-feather="file-text"></i><span
+                            class="hide-menu">Mode 2</span></a>
+                        <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                            <li class="sidebar-item"><a class="sidebar-link" href="#"><span
+                                    class="hide-menu"> Apple count
+                                        </span></a>
+                            </li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="#"><span
+                                    class="hide-menu"> Yield
+                                        </span></a>
+                            </li>
+                            <li class="sidebar-item"> <a class="has-arrow sidebar-link active" href="javascript:void(0)" aria-expanded="false"><span class="hide-menu"> Disease Data</span></a>
+                                    <ul aria-expanded="false" class="collapse second-level base-level-line in">
+                                        <li class="sidebar-item"><a href="#" class="sidebar-link "><span class="hide-menu"> Apple</span></a></li>
+                                        <li class="sidebar-item"><a href="#" class="sidebar-link "><span class="hide-menu">Leaf </span></a></li>
+                                    </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="list-divider"></li>
+                    <li class="nav-small-cap"><span class="hide-menu">Authentication</span></li>
+                    {% block login %}
+                    <li class="sidebar-item"><a aria-expanded="false" class="sidebar-link sidebar-link"
+                                                href="/login"><i class="feather-icon"
+                                                                                     data-feather="lock"></i><span
+                            class="hide-menu">Login
+                                </span></a>
+                    </li>
+                    {% endblock %}
+                    <li class="sidebar-item"><a aria-expanded="false"
+                                                class="sidebar-link sidebar-link"
+                                                href="/register"><i
+                            class="feather-icon"
+                            data-feather="lock"></i><span class="hide-menu">Register
+                                </span></a>
+                    </li>
+
+
+
+
+
+                </ul>
+            </nav>
+            <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+    </aside>
+    {% endblock %}
+    <!-- ============================================================== -->
+    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Page wrapper  -->
+    <!-- ============================================================== -->
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        {% block welcome %}
+        <div class="page-breadcrumb">
+            <div class="row">
+                <div class="col-7 align-self-center">
+                    {% if user %}
+                    <h1 class="page-title text-truncate text-dark font-weight-medium mb-1">Welcome {{user}}</h1>
+                    <hr></hr>
+                    {% endif %}
+                    <div class="d-flex align-items-center">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb m-0 p-0">
+
+                               <h2>DashBoard</h2>
+
+
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {% endblock %}
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+
+
+                <div class="container-fluid" >
+                {% block content %}
+                {% endblock %}
+                </div>
+
+
+
+    </div>
+
+</div>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
+<!-- All Jquery -->
+<!-- ============================================================== -->
+<script src="{{ url_for('static',filename='src/assets/libs/jquery/dist/jquery.min.js') }}"></script>
+<script src="{{ url_for('static',filename='src/assets/libs/popper.js/dist/umd/popper.min.js') }}"></script>
+<script src="{{ url_for('static',filename='src/assets/libs/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+<!-- apps -->
+<!-- apps -->
+<script src="{{ url_for('static',filename='src/dist/js/app-style-switcher.js') }}"></script>
+<script src="{{ url_for('static',filename='src/dist/js/feather.min.js') }}"></script>
+<script src="{{ url_for('static',filename='src/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js') }}"></script>
+<script src="{{ url_for('static',filename='src/dist/js/sidebarmenu.js') }}"></script>
+<!--Custom JavaScript -->
+<script src="{{ url_for('static',filename='src/dist/js/custom.min.js') }}"></script>
+<!--This page JavaScript -->
+<script src="{{ url_for('static',filename='src/assets/extra-libs/c3/d3.min.js') }}"></script>
+<script src="{{ url_for('static',filename='src/assets/extra-libs/c3/c3.min.js') }}"></script>
+<script src="{{ url_for('static',filename='src/assets/libs/chartist/dist/chartist.min.js') }}"></script>
+<script src="{{ url_for('static',filename='src/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js') }}"></script>
+<script src="{{ url_for('static',filename='src/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js') }}"></script>
+<script src="{{ url_for('static',filename='src/assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js') }}"></script>
+<script src="{{ url_for('static',filename='src/dist/js/pages/dashboards/dashboard1.min.js') }}"></script>
+</body>
+
+</html>

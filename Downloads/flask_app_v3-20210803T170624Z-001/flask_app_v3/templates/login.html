@@ -1,0 +1,57 @@
+
+    {% extends 'reg_base.html' %}
+
+    {% block content %}
+    <div class="text-center">
+        <img src="../static/src/assets/images/big/login_logo.png" alt="Login_icon" width="150" height="150">
+    </div>
+    <h2 class="mt-3 text-center">Sign In</h2>
+
+
+    <p class="text-center">Enter your username and password </p>
+    {% if error %}
+                <div class="mt-4">
+                        <div class=class="text-center">
+
+                                <span class="error" style="color:red">{{ error }}</span>
+
+                        </div>
+                </div>
+    {% endif %}
+    <form class="mt-4" method=POST action="{{ url_for('login') }}">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group">
+
+                    <input class="form-control" type="text" name="username" autofocus=""
+                           autocapitalize="none" autocomplete="off" maxlength="150" required=""
+                            placeholder="Username">
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="form-group">
+
+                    <input class="form-control" type="password" name="password"
+                           autocomplete="current-password" required=""
+                        placeholder="Password">
+                </div>
+            </div>
+
+            <div class="col-lg-12 text-center">
+                <button type="submit" class="btn btn-block btn-dark">Sign In</button>
+            </div>
+            <div class="col-lg-12 text-center mt-5">
+                Don't have an account? <a href='/register' class="text-danger">Sign Up</a>
+            </div>
+        </div>
+    </form>
+    {% endblock %}
+
+
+
+
+{# Assumes you setup the password_reset view in your URLconf #}
+{# <p><a href="{% url 'password_reset' %}">Lost password?</a></p> #}
+
+

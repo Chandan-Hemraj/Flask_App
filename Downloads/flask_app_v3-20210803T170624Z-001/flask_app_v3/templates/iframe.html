@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+<style>
+
+</style>
+
+{% block tophead %}
+   <div class="card-header bg-success" style="width: 74rem;margin-left: 3%">
+                            <h3 class="mb-0 text-white">Mode 2: Apple Count</h3>
+
+   </div>
+{% endblock %}
+{% block welcome %}
+{% endblock %}
+{% block content %}
+
+    <iframe src="{{url_for('chart')}}" frameborder="0" style="overflow:hidden;position:fixed;height:90%;width:50%;" height="90%" width="50%"></iframe>
+
+{% endblock %}

@@ -1,0 +1,62 @@
+html>
+    <head>
+        <title>Mode 2: Disease Data</title>
+        <link href="/Users/nikhil_muddappa/Documents/mode-3.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    </head>
+    <body>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Mode 2 : Disease Data</h2>
+                </div>
+                <div class="col-md-6">
+                    <h2>Frame: {{result.framecount}}</h2>
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <button class="btn btn-success" style="width: 50%;" onclick="document.querySelector('#leaves').hidden = true;
+                                                                document.querySelector('#apple-card').hidden = false;">Apples</button>
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-success"  style="width: 50%;" onclick="document.querySelector('#leaves').hidden = false;
+                                                                document.querySelector('#apple-card').hidden = true;">Leaves</button>
+                </div>
+            </div>
+                    <div class="card" id="apple-card" style="margin-top: 5%;" hidden>
+                        <div class="card-header">
+                          <h2>Apples</h2>
+                        </div>
+                        <div class="card-body">
+                            {% if result['apple_disease'] == 'Found' %}
+                                <div class="alert alert-danger" role="alert">
+                                    Disease is detected in apples
+                                  </div>
+                            {% else %}
+                                <div class="alert alert-success" role="alert">
+                                    Disease is not detected in apples
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="card" id="leaves" style="margin-top: 5%;" hidden>
+                        <div class="card-header">
+                          <h2>Leaves</h2>
+                        </div>
+                        <div class="card-body">
+                            {% if result['leaf_disease'] == 'Found' %}
+                                <div class="alert alert-danger" role="alert">
+                                    Disease is detected in Leaves
+                                  </div>
+                            {% else %}
+                                <div class="alert alert-success" role="alert">
+                                    Disease is not detected in Leaves
+                                </div>
+                            {% endif %}
+                        </div>
+                </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script></body>
+    </body>
+</html>

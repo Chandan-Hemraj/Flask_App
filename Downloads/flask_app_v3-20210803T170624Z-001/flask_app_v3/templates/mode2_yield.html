@@ -1,0 +1,135 @@
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+
+    <!-- This page plugin CSS -->
+    <link href="{{ url_for('static',filename='src/assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css' )}}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static',filename='src/dist/css/style.min.css') }}" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+<style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style>
+
+</head>
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader" style="display: none;">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+
+
+<div id="m1">
+    <div id="m2">
+
+        <div id="m3">
+            <div id="zero_config_wrapper">
+
+
+                    <div id="m4">
+                    <table id="nirav">
+
+                        <thead id="m5">
+                            <tr role="row">
+                                <th id="t1" class="sorting_asc" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" ></th>
+                                <th id="t2" class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" ></th>
+                                <th id="t3" class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" ></th>
+                                <th id="t4" class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" ></th>
+                                <th id="t5" class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" ></th>
+                            </tr>
+                        </thead>
+                        <tbody id="m6">
+                        </tbody>
+
+                    </table>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+
+
+    var a = document.getElementById("m1");
+    a.setAttribute("class", "card");
+    a.style.cssText="border-radius:30px; width: 70rem; margin-left: 2%; margin-top: 1%;"
+
+    var b = document.getElementById("m2");
+    b.setAttribute("class", "card-body");
+
+    var c = document.getElementById("m3");
+    c.setAttribute("class", "table-responsive");
+
+
+
+    var e = document.getElementById("m4");
+    e.setAttribute("class", "col-sm-12");
+
+    var f = document.getElementById("nirav");
+    f.setAttribute("class", "table table-striped table-bordered no-wrap dataTable");
+    f.setAttribute("role", "grid");
+    f.setAttribute("aria-describedby", "zero_config_info");
+
+    var d = document.getElementById("zero_config_wrapper");
+    d.setAttribute("class", "dataTables_wrapper container-fluid dt-bootstrap4 no-footer");
+    d.innerhtml=" ";
+
+    document.getElementById('t1').innerHTML = "Frame";
+    document.getElementById('t2').innerHTML = "Fully Ripe Apple";
+    document.getElementById('t3').innerHTML = "Half Ripe Apple";
+    document.getElementById('t4').innerHTML = "Half Raw Apple";
+    document.getElementById('t5').innerHTML = "Raw Apple";
+
+    document.getElementById('m6').innerHTML +="<tr role='row' class='odd'><td class='sorting_1'>{{result.framecount}}</td><td>{{result.fully_ripe}}</td><td>{{result.half_ripe}}</td><td>{{result.half_raw}}</td><td>{{result.raw}}</td></tr>";
+
+</script>
+
+
+
+
+
+
+
+
+<script src="{{ url_for('static',filename='src/assets/libs/jquery/dist/jquery.min.js')}}"></script>
+<!-- Bootstrap tether Core JavaScript -->
+<script src="{{ url_for('static',filename='src/assets/libs/popper.js/dist/umd/popper.min.js')}}"></script>
+<script src="{{ url_for('static',filename='src/assets/libs/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<!-- apps -->
+<!-- apps -->
+<script src="{{ url_for('static',filename='src/dist/js/app-style-switcher.js')}}"></script>
+<script src="{{ url_for('static',filename='src/dist/js/feather.min.js')}}"></script>
+<!-- slimscrollbar scrollbar JavaScript -->
+<script src="{{ url_for('static',filename='src/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js')}}"></script>
+<script src="{{ url_for('static',filename='src/assets/extra-libs/sparkline/sparkline.js')}}"></script>
+<!--Wave Effects -->
+<!-- themejs -->
+<!--Menu sidebar -->
+<script src="{{ url_for('static',filename='src/dist/js/sidebarmenu.js')}}"></script>
+<!--Custom JavaScript -->
+<script src="{{ url_for('static',filename='src/dist/js/custom.min.js')}}"></script>
+<!--This page plugins -->
+<script src="{{ url_for('static',filename='src/assets/extra-libs/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{ url_for('static',filename='src/dist/js/pages/datatable/datatable-basic.init.js')}}"></script>
+
+
+</body>
+</html>
